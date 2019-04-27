@@ -112,3 +112,15 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.vscode/
+
+source/.spyproject/
+source/.vscode/
+source/__pycache__/
+
+note.aux
+note.log
+note.synctex.gz
+note.tex
+note.pdf
