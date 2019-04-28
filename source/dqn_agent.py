@@ -11,7 +11,10 @@ import numpy as np
 import gym
 import gym_ple
 
+import tensorflow as tf
+
 from tensorflow.python import keras as K
+from tensorflow.keras.backend import set_session
 
 from framework import FNAgent, Trainer, Observer
 
@@ -210,6 +213,12 @@ def main(play, is_test):
         trainer.train(env, test_mode=is_test)
         
 if __name__ == "__main__":
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+    config.log_device_placement = False
+    sess = tf.Session(config=config)
+    set_session(sess)
+    
     parser = argparse.ArgumentParser(description="Deep Q-Network (DQN) agent")
     parser.add_argument("--play", action="store_true",
                         help="play with trained model")
