@@ -120,3 +120,5 @@ note.log
 note.synctex.gz
 note.tex
 note.pdf
+
+events.out.tfevents.*
